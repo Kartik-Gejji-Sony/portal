@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import CircularProgress from "@mui/material/CircularProgress";
 import { Button } from "@mui/material";
+import Alert from "@mui/material/Alert";
 
 export const Team = () => {
   const user = JSON.parse(localStorage.getItem("okta-token-storage"));
@@ -33,6 +34,9 @@ export const Team = () => {
     if (response.status === 200) {
       setLoadingTeamUrl(false);
       setTeamUrl(response.data.url);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 1000);
     } else {
       setLoadingTeamUrl(false);
     }
@@ -44,7 +48,7 @@ export const Team = () => {
   // console.log('ress--', teamUrl)
 
   const [teamImageUrl, setTeamImageUrl] = useState();
-
+  const [success, setSuccess] = useState(false);
   const handleAssignTeamUrl = async () => {
     // const payload = {
     //   teams: teamImageUrl?.team
@@ -63,6 +67,7 @@ export const Team = () => {
     console.log(result);
     if (result.status === 200) {
       getData();
+      setSuccess(true);
     }
   };
 
@@ -74,8 +79,11 @@ export const Team = () => {
         onChange={(e) => setTeamImageUrl(e.target.files[0])}
       />
       <Button variant="contained" onClick={handleAssignTeamUrl}>
-        add
+        Upload
       </Button>
+      {success ? (
+        <span style={{ color: "green" }}>Image Uploded SuccessFully...</span>
+      ) : null}
 
       {emptyTeamUrlMsg ? (
         "No image available"
