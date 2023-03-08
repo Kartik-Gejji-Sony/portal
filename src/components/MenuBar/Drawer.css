@@ -1,0 +1,30 @@
+.drawer1 {
+    text-decoration: none;
+    margin-top: 20px;
+    text-align: left;
+    color: black;
+    position: relative;
+}
+
+.drawer {
+    text-decoration: none;
+    margin-top: 2rem;
+    text-align: left;
+    color: black;
+    position: relative;
+    left: 5rem;
+}
+
+.drawer1:hover {
+    color: black;
+    font-weight: bolder;
+    background-color: rgb(240, 233, 233);
+
+}
+
+.drawer:hover {
+    color: black;
+    font-weight: bolder;
+    background-color: rgb(240, 233, 233);
+
+}

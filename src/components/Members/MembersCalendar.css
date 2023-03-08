@@ -1,0 +1,11 @@
+.membersCalendar {
+    width: 80%;
+    border: 1px solid black;
+    background-color: white;
+    position: relative;
+    top: 2px;    
+}
+
+.weekend {
+    background-color: #f6f6f6;
+}

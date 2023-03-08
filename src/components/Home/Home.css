@@ -1,0 +1,21 @@
+/* .home {
+    margin-left: 48px;
+} */
+
+h1 {
+    padding: 10px;
+    position: relative;
+    left: 50px;
+}
+
+.p1 {
+    padding: 5px;
+    /* padding-left: 50px; */
+    font-size: 16px;
+}
+
+.p1:hover {
+    cursor: pointer;
+    background-color: lightgray;
+    border-left: 2px solid green;
+}
